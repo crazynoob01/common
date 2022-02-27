@@ -1,0 +1,36 @@
+{
+  "name": "crazynoob01/common",
+  "description": "Common libraries for internal projects",
+  "type": "library",
+  "license": "Proprietary",
+  "authors": [
+    {
+      "name": "Edward Chan",
+      "email": "edward.chankf2005@gmail.com"
+    }
+  ],
+  "config": {
+    "preferred-install": "dist",
+    "optimize-autoloader": true
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "php": "^8.0",
+    "ext-json": "*"
+  },
+  "require-dev": {
+  },
+  "autoload": {
+    "psr-4": {
+      "Crazynoob01\\Common\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Crazynoob01\\Common\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+  }
+}
