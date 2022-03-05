@@ -17,9 +17,11 @@
   "prefer-stable": true,
   "require": {
     "php": "^8.0",
-    "ext-json": "*"
-  },
-  "require-dev": {
+    "ext-json": "*",
+    "friendsofphp/php-cs-fixer": "^3.6",
+    "nesbot/carbon": "^2.57",
+    "illuminate/support": "^9.3",
+    "phpunit/phpunit": "^9.5"
   },
   "autoload": {
     "psr-4": {
