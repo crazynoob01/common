@@ -40,7 +40,7 @@ class JsonModelMapper {
 
     private const TYPE_OBJECT = 'object';
 
-    public function __construct(private bool $deserializePublicProperties = false) {
+    public function __construct(private bool $deserializePublicProperties = false, private bool $isPropertySnakeCase = true) {
     }
 
     /**
@@ -105,9 +105,10 @@ class JsonModelMapper {
         ?Closure $returnsClass = null,
         ?Closure $decoratesFullyQualifiedClassPath = null,
         ?Closure $paginatedModelFactory = null,
-        bool $deserialisePublicProperties = false
+        bool $isPropertySnakeCase = true,
+        bool $deserialisePublicProperties = false,
     ) {
-        return (new self($deserialisePublicProperties))->deserialise($json, $returnsClass, $decoratesFullyQualifiedClassPath, $paginatedModelFactory);
+        return (new self($deserialisePublicProperties, $isPropertySnakeCase))->deserialise($json, $returnsClass, $decoratesFullyQualifiedClassPath, $paginatedModelFactory);
     }
 
     private function isAssociative(array $array): bool {
@@ -136,7 +137,8 @@ class JsonModelMapper {
             }
 
             // convert the property name to snake case because the api returns in snake case
-            $propertyNameForJson = Str::snake($property->getName());
+            $propertyNameForJson = $this->isPropertySnakeCase === true ? Str::snake($property->getName()) : $property->getName();
+
             // determine the type of the value
             $value = $array[$propertyNameForJson] ?? null;
 
