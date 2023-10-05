@@ -34,5 +34,11 @@
     }
   },
   "scripts": {
+    "csfix": [
+      "vendor\\bin\\php-cs-fixer fix src tests --using-cache=no --verbose --config=./src/CodeQuality/PhpCsFixerRules.php"
+    ],
+    "csfix-dry": [
+      "vendor\\bin\\php-cs-fixer fix src tests --dry-run --using-cache=no --config=./src/CodeQuality/PhpCsFixerRules.php"
+    ]
   }
 }

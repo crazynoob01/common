@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Crazynoob01\Common\Tests\Modules\Deserialization;
 
 use ArgumentCountError;
-use ErrorException;
 use Crazynoob01\Common\Modules\Deserialization\JsonModelMapper;
 use Crazynoob01\Common\Modules\Deserialization\PaginatedModel;
 use Crazynoob01\Common\Modules\Deserialization\Pagination;
@@ -27,6 +26,7 @@ use Crazynoob01\Common\Tests\Fixtures\Modules\Deserialization\StandardDeserializ
 use Crazynoob01\Common\Tests\Fixtures\Modules\Deserialization\StandardDeserializationClassWithPolymorphicClassWithPrivateProperty;
 use Crazynoob01\Common\Tests\Fixtures\Modules\Deserialization\StandardDeserializationClassWithPolymorphicClassWithProtectedProperty;
 use Crazynoob01\Common\Tests\Fixtures\Modules\Deserialization\StandardDeserializationClassWithPublicProperties;
+use ErrorException;
 use JsonException;
 
 /**

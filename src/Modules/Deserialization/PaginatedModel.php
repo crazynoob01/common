@@ -10,6 +10,7 @@ use JsonSerializable;
 
 /**
  * @template   TModel of \Crazynoob01\Common\Modules\Deserialization\CanBeMappedToJsonModel
+ *
  * @implements Iterator<TModel>
  */
 class PaginatedModel implements Iterator, Countable, JsonSerializable {

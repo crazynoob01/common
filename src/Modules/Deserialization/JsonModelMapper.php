@@ -118,6 +118,7 @@ class JsonModelMapper {
     /**
      * @throws DeserializationException
      * @throws ReflectionException
+     *
      * @phpstan-param array                  $array
      * @phpstan-param Closure():class-string $returnsClass
      */
@@ -156,6 +157,7 @@ class JsonModelMapper {
 
     /**
      * @throws ErrorException
+     *
      * @phpstan-param null|Closure(class-string<TValue>, TValue): class-string<TValue> $decorator
      */
     private function convertToPropertyTypeFromTypehint(
@@ -264,9 +266,7 @@ class JsonModelMapper {
 
     /**
      * @phpstan-param class-string<TValue>                                             $fullyQualifiedClassPath
-     *
      * @phpstan-param TValue                                                           $value
-     *
      * @phpstan-param null|Closure(class-string<TValue>, TValue):class-string<TValue> $decorator
      *
      * @throws DeserializationException
